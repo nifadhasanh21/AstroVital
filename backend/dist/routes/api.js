@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const dashboard_controller_1 = require("../controllers/dashboard.controller");
+const auth_controller_1 = require("../controllers/auth.controller");
+const router = (0, express_1.Router)();
+router.post('/auth/register', auth_controller_1.registerUser);
+router.post('/auth/login', auth_controller_1.loginUser);
+router.get('/dashboard', dashboard_controller_1.getDashboardData);
+exports.default = router;
